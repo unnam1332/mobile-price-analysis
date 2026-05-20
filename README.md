@@ -122,7 +122,16 @@ The dataset contains:
 
 ### 6. Linear Regression
 - Battery Power vs Talk Time Analysis
+# 7. ANOVA Test
+anova_result <- aov(price_range ~ factor(ram), data = mobile_data)
+# 8. Chi-Square Test
+chisq.test(table(mobile_data$four_g, mobile_data$wifi))
 
+Key Insights- 
+  RAM has a strong relationship with mobile phone price range.
+  - Battery power contributes to price prediction.
+  -  Statistical analysis helps identify feature importance.
+  - 4G and WiFi relationship analyzed using Chi-Square testing
 ---
 
 ## Key Findings
@@ -145,16 +154,3 @@ The dataset contains:
 
 ---
 
-## Sample R Code
-
-```r
-# Load Dataset
-data <- read.csv("Mobile Price.csv")
-
-# Summary Statistics
-summary(data)
-
-# Linear Regression
-linear_model <- lm(battery_power ~ talk_time, data = data)
-
-summary(linear_model)

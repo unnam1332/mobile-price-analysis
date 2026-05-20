@@ -1,82 +1,160 @@
-# 📱 Mobile Price Analysis
+# Mobile Prices Data Analysis
 
-This project analyzes mobile phone specifications and their impact on mobile price categories using R programming. The project focuses on data exploration, visualization, and statistical analysis techniques.
+A comprehensive data analytics project focused on analyzing mobile phone specifications and understanding the factors that influence mobile phone pricing using statistical analysis and visualization techniques in R.
 
-## 📌 Objective
+## Project Overview
 
-The main objective of this project is to explore mobile phone data and identify relationships between device specifications and price range.
-
-## 📂 Dataset Features
-
-The dataset includes features such as:
+This project analyzes a mobile phone dataset containing 2000 observations and 21 variables related to smartphone specifications such as:
 
 - Battery Power
 - RAM
-- 4G Support
-- WiFi Availability
+- Internal Memory
+- Camera Quality
+- Screen Dimensions
+- Network Support (3G/4G/WiFi)
 - Price Range
 
-## 🛠️ Technologies Used
+The goal of this project is to explore relationships between mobile phone features and pricing categories using statistical methods, hypothesis testing, ANOVA, regression analysis, and categorical data analysis.
+
+---
+
+## Team Members
+
+- Salman Khan
+- Gowri Rohith Chirra
+- Ratnesh Chilamkurthi
+- Bhanuprasad Unnam
+- Manikanta Modugula
+- Rishi Vardhan Reddy Navaru
+
+Professor: Ankur Arora
+
+---
+
+## Dataset Information
+
+The dataset contains:
+
+- 2000 mobile phone records
+- 21 variables
+  - 14 Numerical Variables
+  - 7 Categorical Variables
+
+### Numerical Features
+
+- battery_power
+- clock_speed
+- fc (Front Camera)
+- int_memory
+- m_dep
+- mobile_wt
+- n_cores
+- pc (Primary Camera)
+- px_height
+- px_width
+- ram
+- sc_h
+- sc_w
+- talk_time
+
+### Categorical Features
+
+- blue
+- dual_sim
+- four_g
+- three_g
+- touch_screen
+- wifi
+- price_range
+
+---
+
+## Technologies Used
 
 - R Programming
-- Base R Functions
+- ggplot2
+- dplyr
 - Statistical Analysis
-- Data Visualization
+- Hypothesis Testing
+- ANOVA
+- Linear Regression
 
-## 📊 Analysis Performed
+---
 
-### Data Exploration
-- Checked dataset structure
-- Generated summary statistics
-- Verified missing values
+## Project Objectives
 
-### Data Visualization
-- Histogram for battery power distribution
-- Boxplot for RAM distribution
-- Scatter plot for RAM vs Price Range
+- Perform data cleaning and preprocessing
+- Analyze mobile phone specifications
+- Identify relationships between device features and price range
+- Conduct hypothesis testing
+- Perform ANOVA analysis
+- Conduct categorical data analysis
+- Build linear regression models
+- Visualize distributions and relationships
 
-### Statistical Analysis
-- Correlation analysis
-- Linear regression model
-- ANOVA test
-- Chi-square test
+---
 
-## 📈 Key Insights
+## Statistical Analyses Performed
 
-- RAM has a strong relationship with mobile price range.
-- Higher device specifications generally correspond to higher price categories.
-- Battery power also contributes to pricing trends.
-- Statistical tests helped identify relationships between different mobile features.
+### 1. Data Cleaning & Preprocessing
+- Missing value analysis
+- Outlier detection using Box Plots and IQR
 
-## ▶️ How to Run
+### 2. Data Summarization
+- Mean
+- Median
+- Mode
+- Quartiles
+- Standard Deviation
+
+### 3. Hypothesis Testing
+- Battery Power Mean Testing
+- Internal Memory Mean Testing
+- RAM Comparison for 4G vs Non-4G Phones
+
+### 4. ANOVA Analysis
+- One-Way ANOVA
+- Two-Way ANOVA
+
+### 5. Categorical Data Analysis
+- Frequency Analysis
+- Chi-Squared Test
+
+### 6. Linear Regression
+- Battery Power vs Talk Time Analysis
+
+---
+
+## Key Findings
+
+- No missing values or major outliers were found in the dataset.
+- RAM significantly varies across different mobile price ranges.
+- Battery power differs significantly from the hypothesized mean value.
+- 4G support does not significantly impact average RAM.
+- Talk time has a statistically significant relationship with battery power.
+- WiFi and 4G support showed no strong association using Chi-Squared testing.
+
+---
+
+## Visualizations Included
+
+- Box Plots
+- Histograms
+- Scatter Plots
+- Normal Distribution Graphs
+
+---
+
+## Sample R Code
 
 ```r
-mobile_data <- read.csv("mobile_price_data.csv")
-source("mobile_price_analysis.R")
-```
+# Load Dataset
+data <- read.csv("Mobile Price.csv")
 
-## 📁 Project Structure
+# Summary Statistics
+summary(data)
 
-```bash
-mobile-price-analysis/
-│
-├── mobile_price_analysis.R
-├── mobile_price_data.csv
-└── README.md
-```
+# Linear Regression
+linear_model <- lm(battery_power ~ talk_time, data = data)
 
-## 🎯 Skills Demonstrated
-
-- Exploratory Data Analysis (EDA)
-- Data Visualization
-- Statistical Analysis
-- Regression Modeling
-- Analytical Thinking
-
-## 👨‍💻 Author
-
-Bhanuprasad Unnam
-
-## 📜 License
-
-This project is created for educational and learning purposes.
+summary(linear_model)
